@@ -1,0 +1,14 @@
+{% extends "AppCoder/padre.html" %}
+{% load static %}
+
+{% block contenidoQueCambia %}
+<!--Aquí va lo que cambia, y lo asociado a está vista :) -->
+<title>Borrar Curso</title>
+
+<form method="POST">
+    {% csrf_token  %}
+    ¿Estás seguro que deseas borrar el curso "{{ objetc }}"?
+    <input type="submit" value="Confirmar" />
+</form>
+
+{% endblock %}

@@ -1,0 +1,25 @@
+{% extends "AppCoder/padre.html" %}
+{% load static %}
+{% block title %} Inicio {% endblock title %}
+{% block contenidoQueCambia %}
+<form action="">
+    {% csrf_token %}
+    <p> Estamos buscando: {{nombre}}</p>
+    {% if cursos %}
+    <ul>
+        {% for curso in cursos %}
+        <li> 
+        {{ curso.nombre }}
+        {{ curso.camada }}
+        </li>
+        {% endfor %}
+    </ul>
+    {% else %}
+    <p> No hay datos para esa descripcion.</p>
+
+    {% endif %}
+
+    <p style="color: red;"> {{ respuesta }}</p>
+
+
+{% endblock %}
